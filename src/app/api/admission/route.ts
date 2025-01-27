@@ -5,7 +5,7 @@ import { jwtDecode } from "jwt-decode";
 import { prisma } from "../../../../lib/db";
 
 
-export const body_schema = z.object({
+const body_schema = z.object({
     token:string()
 })
 type body_type = z.infer<typeof body_schema>
