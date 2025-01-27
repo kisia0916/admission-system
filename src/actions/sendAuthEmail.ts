@@ -3,8 +3,7 @@ import jwt from "jsonwebtoken"
 import nodemailer from "nodemailer"
 import { string, z } from "zod"
 import { prisma } from "../../lib/db"
-import fs from "fs"
-import path from "path"
+
 
 const user_schema = z.object({
     name:string(),
