@@ -30,8 +30,9 @@ function ReadQR() {
           set_decode_result(JSON.stringify(decoded_token,null,2))
           const res = await fetch("/api/admission",{
             method:"post",
-            body:JSON.stringify({token:code.data})
-          })
+            body:JSON.stringify({token:code.data}),
+            cache:"no-store"
+          },)
           const api_result:api_response_admission = await res.json()
           if (api_result.message === "done"){
             alert("入場が完了しました")
