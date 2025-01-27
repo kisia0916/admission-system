@@ -3,7 +3,6 @@ import Label from '../Label/Label'
 import Input from '../Input/Input'
 import Message from '../Message/Message'
 import "./Section.css"
-import Button from '@/components/common/Button/Button'
 
 function Section(props:{label:string,hint:string}) {
   return (

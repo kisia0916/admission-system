@@ -10,7 +10,7 @@ async function page({params}: {params: {token: string}}) {
   let qr_text:string = ""
   const decoded_token = token as string
   try{
-    const verified_token = jwt.verify(decoded_token,process.env.JWT_SECRET_KEY as string)
+    jwt.verify(decoded_token,process.env.JWT_SECRET_KEY as string)
     qr_text = decoded_token
   }catch(error){
     display_flg = false
