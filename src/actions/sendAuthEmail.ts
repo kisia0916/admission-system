@@ -14,12 +14,27 @@ type user_type = z.infer<typeof user_schema>
 
 
 const gen_send_html = (token:string)=>{
-    const filePath = path.join(process.cwd(), 'public', 'mail', 'template.html');
-    const data = fs.readFileSync(filePath,"utf-8")
-    console.log(data)
-    const place_holder = "{link}"
-    const auth_url = `${process.env.SERVER_URL}/ticket/${token}`
-    const send_html = data.replace(new RegExp(place_holder,"g"),auth_url)
+    // const filePath = path.join(process.cwd(), 'public', 'mail', 'template.html');
+    // const data = fs.readFileSync(filePath,"utf-8")
+    // console.log(data)
+    // const place_holder = "{link}"
+    // const auth_url = `${process.env.SERVER_URL}/ticket/${token}`
+    // const send_html = data.replace(new RegExp(place_holder,"g"),auth_url)
+    const send_html = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>admission system auth mail</title>
+        </head>
+        <body>
+            <h2>Admission system auth mail</h2>
+            <span>以下のリンクから認証QRコードを取得してください</span>
+            <a href="${process.env.SERVER_URL}/ticket/${token}">click here</a>
+        </body>
+        </html>
+    `
     return send_html
 }
 
