@@ -1,0 +1,7 @@
+.TopPage{
+    max-width: 400px;
+    width: 100%;
+    height: calc(100dvh - 100px);
+    margin: auto;
+    display: flex;
+}

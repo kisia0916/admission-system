@@ -13,6 +13,9 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily:{
+      main:["Nunito"]
+    }
   },
   plugins: [],
 } satisfies Config;

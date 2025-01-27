@@ -1,0 +1,29 @@
+.TopBar{
+    width: 100%;
+    height: 48px;
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.216);
+}
+.TopBarTitle{
+    font-weight: 400;
+    font-size: 120%;
+}
+.TopBarWarp{
+    display: flex;
+    margin: auto;
+    max-width: 400px;
+    width: 100%;
+    justify-content: space-between;
+}
+.TopBarLeft{
+    display: flex;
+    margin-left: 10px;
+}
+.TopBarRight{
+    display: flex;
+    margin-right: 10px;
+}
+.TopBarSysVer{
+    margin-top: 4px;
+}

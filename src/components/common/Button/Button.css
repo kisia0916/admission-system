@@ -1,0 +1,27 @@
+.Button{
+    height: 36px;
+    background-color: white;
+    border-radius: 8px;
+    margin-left: 15px;
+}
+.ButtonText{
+    color: black;
+    font-weight: 700;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.loadingButton{
+    display: flex;
+    height: 36px;
+    width: 100px;
+    background-color: white;
+    border-radius: 8px;
+    margin-left: 15px;
+}
+.loadingButtonText{
+    color: black;
+    font-weight: 700;
+    margin: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+}

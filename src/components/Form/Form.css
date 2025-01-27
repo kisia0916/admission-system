@@ -1,0 +1,21 @@
+.FormMain{
+    width: 100%;
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+@media (min-width: 500px) {
+    /* 400px以上の画面幅で適用されるスタイル */
+    .FormMain {
+        border: solid 1px rgba(255, 255, 255, 0.583);;
+
+    }
+  }
+.FormMainWrap{
+    margin-top: 20px;
+    width: 100%;
+}
+.FormButtonWrap{
+    margin-bottom: 20px;
+}
