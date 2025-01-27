@@ -19,6 +19,8 @@ function ReadQR() {
   };
 
   useEffect(()=>{
+    setVideoHeight(400)
+    setVideoWidth(400)
     const check_qr = async()=>{
     const ctx:CanvasRenderingContext2D | null | undefined = canvasRef.current?.getContext("2d")
       if (ctx && videoRef.current){
