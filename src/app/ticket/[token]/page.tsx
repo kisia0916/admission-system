@@ -12,7 +12,7 @@ async function page({params}: {params: {token: string}}) {
   try{
     jwt.verify(decoded_token,process.env.JWT_SECRET_KEY as string)
     qr_text = decoded_token
-  }catch(error){
+  }catch{
     display_flg = false
   }
   return (

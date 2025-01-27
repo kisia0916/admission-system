@@ -6,8 +6,8 @@ import "./ReadQR.css"
 import { api_response_admission } from '@/app/api/admission/route';
 
 function ReadQR() {
-  const canvasRef = useRef<any>(null)
-  const videoRef = useRef<any>(null)
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const [videoWidth,setVideoWidth] = useState<number>(400)
   const [videoHeight,setVideoHeight] = useState<number>(400)
   const [decode_result,set_decode_result] = useState<string>("")
@@ -21,7 +21,7 @@ function ReadQR() {
   useEffect(()=>{
     const check_qr = async()=>{
     const ctx:CanvasRenderingContext2D | null | undefined = canvasRef.current?.getContext("2d")
-      if (ctx){
+      if (ctx && videoRef.current){
         ctx.drawImage(videoRef.current,0,0,videoRef.current.clientWidth,videoRef.current.clientHeight)
         const cam_data = ctx.getImageData(0,0,videoRef.current.clientWidth,videoRef.current.clientHeight)
         const code = jsQR(cam_data.data,cam_data.width,cam_data.height)
@@ -49,7 +49,7 @@ function ReadQR() {
     }
     const start_cam = async()=>{
       const stream = await navigator.mediaDevices.getUserMedia(config)
-      if (videoRef.current){
+      if (videoRef.current && canvasRef.current){
         videoRef.current.srcObject = stream;
         canvasRef.current.width = videoRef.current.clientWidth
         canvasRef.current.height = videoRef.current.clientHeight
